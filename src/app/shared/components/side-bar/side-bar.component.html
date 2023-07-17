@@ -1,0 +1,29 @@
+<div class="side-bar">
+    <div><i class="uil uil-ellipsis-h"></i></div>
+    <ul class="side-bar__list list-one">
+        <li [routerLink]="i.router" [queryParams]="i.query" *ngFor="let i of mainMenu.defaultOptions">
+            <div class="list-wrapper-item">
+                <i [ngClass]="['uil',i.icon]"></i>
+                <span class="side-bar__list list-label">{{i.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator"></div>
+    <ul class="side-bar__list list-two">
+        <li *ngFor="let i of mainMenu.accessLink">
+            <div class="list-wrapper-item">
+                <i class="uil {{i.icon}}"></i>
+                <span class="side-bar__list list-label">{{i.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator line-separator"></div>
+    <ul class="side-bar__list list-three">
+        <li *ngFor="let i of customOptions">
+            <div class="list-wrapper-item">
+                <i class="uil {{i.icon}}"></i>
+                <span class="side-bar__list list-label">{{i.name}}</span>
+            </div>
+        </li>
+    </ul>
+</div>
